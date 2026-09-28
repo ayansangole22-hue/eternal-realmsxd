@@ -528,3 +528,147 @@ footer{
 </style>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eternal Realms Loading</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#000;
+    overflow:hidden;
+}
+
+.loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:#000;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Background Glow */
+.loader::before{
+    content:'';
+    position:absolute;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
+    animation:pulse 3s infinite ease-in-out;
+}
+
+.logo{
+    color:#fff;
+    font-size:4rem;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:8px;
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px #fff;
+    z-index:2;
+}
+
+.subtitle{
+    color:#bfbfbf;
+    margin-top:10px;
+    letter-spacing:4px;
+    z-index:2;
+}
+
+/* Loading Bar */
+.bar{
+    width:350px;
+    height:8px;
+    background:#111;
+    border-radius:50px;
+    overflow:hidden;
+    margin-top:40px;
+    z-index:2;
+}
+
+.fill{
+    width:0%;
+    height:100%;
+    background:#fff;
+    box-shadow:0 0 15px #fff;
+    animation:load 4s linear forwards;
+}
+
+.loading-text{
+    margin-top:15px;
+    color:#fff;
+    letter-spacing:3px;
+    animation:blink 1.5s infinite;
+    z-index:2;
+}
+
+@keyframes load{
+    from{width:0;}
+    to{width:100%;}
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+        opacity:.4;
+    }
+    50%{
+        transform:scale(1.2);
+        opacity:.9;
+    }
+}
+
+@keyframes blink{
+    0%,100%{opacity:1;}
+    50%{opacity:.3;}
+}
+
+.fade-out{
+    animation:fadeOut 1s forwards;
+}
+
+@keyframes fadeOut{
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="loader" id="loader">
+    <div class="logo">ETERNAL REALMS</div>
+    <div class="subtitle">COMMUNITY • SOCIAL • GAMING</div>
+
+    <div class="bar">
+        <div class="fill"></div>
+    </div>
+
+    <div class="loading-text">ENTERING THE REALM...</div>
+</div>
+
+<script>
+setTimeout(() => {
+    document.getElementById("loader").classList.add("fade-out");
+}, 4500);
+</script>
+
+</body>
+</html>
