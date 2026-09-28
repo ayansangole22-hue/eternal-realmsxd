@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eternal Realms</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#000;
+    color:#fff;
+    overflow-x:hidden;
+    cursor:none;
+}
+
+/* Animated Background */
+.background{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at 20% 20%, rgba(255,0,0,.15), transparent 25%),
+    radial-gradient(circle at 80% 80%, rgba(255,0,0,.12), transparent 25%),
+    #000;
+    animation:pulse 8s infinite alternate;
+    z-index:-1;
+}
+
+@keyframes pulse{
+    from{transform:scale(1);}
+    to{transform:scale(1.08);}
+}
+
+/* Navigation */
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:18px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,.85);
+    backdrop-filter:blur(12px);
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.7rem;
+    font-weight:bold;
+    color:#ff2d2d;
+}
+
+.nav-links{
+    display:flex;
+    gap:15px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    padding:10px 20px;
+    background:#111;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    background:#ff2d2d;
+    transform:translateY(-3px);
+}
+
+/* Hero */
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px;
+}
+
+.hero h1{
+    font-size:5rem;
+    color:#ff2d2d;
+    text-shadow:0 0 25px rgba(255,45,45,.5);
+}
+
+.hero p{
+    max-width:850px;
+    margin-top:20px;
+    color:#d0d0d0;
+    font-size:1.1rem;
+    line-height:1.7;
+}
+
+/* Sections */
+.section{
+    padding:100px 10%;
+}
+
+.section h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:2.5rem;
+}
+
+/* Cards */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#111;
+    padding:25px;
+    border-radius:18px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    background:#181818;
+    box-shadow:0 0 20px rgba(255,0,0,.2);
+}
+
+.card h3{
+    color:#ff2d2d;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#d0d0d0;
+    line-height:1.6;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:30px;
+    color:#888;
+    background:#050505;
+}
+
+/* White Custom Cursor */
+.cursor-dot{
+    width:8px;
+    height:8px;
+    background:#fff;
+    border-radius:50%;
+    position:fixed;
+    pointer-events:none;
+    transform:translate(-50%,-50%);
+    z-index:10001;
+    box-shadow:0 0 15px #fff;
+}
+
+.cursor-circle{
+    width:35px;
+    height:35px;
+    border:2px solid #fff;
+    border-radius:50%;
+    position:fixed;
+    pointer-events:none;
+    transform:translate(-50%,-50%);
+    z-index:10000;
+    box-shadow:0 0 20px rgba(255,255,255,.5);
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+.nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero h1{
+    font-size:3rem;
+}
+}
+</style>
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="cursor-dot"></div>
+<div class="cursor-circle"></div>
+
+<nav>
+    <div class="logo">Eternal Realms</div>
+
+    <div class="nav-links">
+        <a href="https://discord.gg/bkv42DDfb" target="_blank">Join Server</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#rules">Rules</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Eternal Realms</h1>
+
+    <p>
+        Eternal Realms is a friendly and fast-growing Discord community where
+        everyone can make friends, participate in events, enjoy minigames,
+        use AI bots, and have fun in a safe, welcoming, and family-friendly
+        environment.
+    </p>
+</section>
+
+<section id="benefits" class="section">
+    <h2>Benefits</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🤝 Friendly Community</h3>
+            <p>Meet new people and build lasting friendships.</p>
+        </div>
+
+        <div class="card">
+            <h3>🎮 Minigames</h3>
+            <p>Enjoy entertaining games and community activities.</p>
+        </div>
+
+        <div class="card">
+            <h3>🎲 Truth & Dare</h3>
+            <p>Take part in fun and interactive challenges.</p>
+        </div>
+
+        <div class="card">
+            <h3>🤖 AI Chat Bot</h3>
+            <p>Chat with AI and explore unique server features.</p>
+        </div>
+
+        <div class="card">
+            <h3>🛡️ SFW Environment</h3>
+            <p>A safe and family-friendly space for everyone.</p>
+        </div>
+
+        <div class="card">
+            <h3>📈 Fast Growing</h3>
+            <p>Join a community that's growing bigger every day.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="rules" class="section">
+    <h2>Rules</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🚫 No Doxxing</h3>
+            <p>Sharing private information is strictly prohibited.</p>
+        </div>
+
+        <div class="card">
+            <h3>🔞 No NSFW</h3>
+            <p>Keep all content safe and family-friendly.</p>
+        </div>
+
+        <div class="card">
+            <h3>💬 No Offensive Content</h3>
+            <p>Treat everyone respectfully and avoid harmful behavior.</p>
+        </div>
+
+        <div class="card">
+            <h3>⚠️ No Glitch Abuse</h3>
+            <p>Do not exploit bugs, glitches, or loopholes.</p>
+        </div>
+
+        <div class="card">
+            <h3>🛡️ Respect Staff</h3>
+            <p>Moderators and staff members should be treated respectfully.</p>
+        </div>
+
+        <div class="card">
+            <h3>🤝 Be Respectful</h3>
+            <p>Help keep Eternal Realms positive and welcoming.</p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 Eternal Realms • Community • Gaming • Friends • Fun
+</footer>
+
+<script>
+const dot = document.querySelector(".cursor-dot");
+const circle = document.querySelector(".cursor-circle");
+
+let mouseX = 0;
+let mouseY = 0;
+let circleX = 0;
+let circleY = 0;
+
+document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    dot.style.left = mouseX + "px";
+    dot.style.top = mouseY + "px";
+});
+
+function animateCursor(){
+    circleX += (mouseX - circleX) * 0.15;
+    circleY += (mouseY - circleY) * 0.15;
+
+    circle.style.left = circleX + "px";
+    circle.style.top = circleY + "px";
+
+    requestAnimationFrame(animateCursor);
+}
+
+animateCursor();
+</script>
+
+</body>
+</html>
