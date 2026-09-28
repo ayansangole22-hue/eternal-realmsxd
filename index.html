@@ -339,6 +339,192 @@ function animateCursor(){
 
 animateCursor();
 </script>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    cursor:none;
+    font-weight:700;
+}
 
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#000;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* CUSTOM CURSOR */
+
+.cursor{
+    width:35px;
+    height:35px;
+    border:2px solid #fff;
+    border-radius:50%;
+    position:fixed;
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+    z-index:9999;
+    transition:width .2s,height .2s;
+    box-shadow:0 0 15px rgba(255,255,255,.4);
+}
+
+.cursor-dot{
+    width:6px;
+    height:6px;
+    background:#fff;
+    border-radius:50%;
+    position:fixed;
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+    z-index:10000;
+}
+
+/* HERO */
+
+header{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    padding:20px;
+}
+
+header h1{
+    font-size:5rem;
+    letter-spacing:8px;
+    margin-bottom:15px;
+    font-weight:900;
+    text-shadow:
+    0 0 15px #fff,
+    0 0 30px rgba(255,255,255,.3);
+}
+
+header p{
+    color:#d0d0d0;
+    font-size:1.2rem;
+    max-width:700px;
+    line-height:1.8;
+}
+
+.join-btn{
+    margin-top:35px;
+    text-decoration:none;
+    color:white;
+    border:2px solid white;
+    padding:15px 40px;
+    border-radius:50px;
+    transition:.3s;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.join-btn:hover{
+    background:white;
+    color:black;
+    box-shadow:0 0 20px rgba(255,255,255,.5);
+}
+
+/* SECTIONS */
+
+section{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.card{
+    background:#080808;
+    border:1px solid #222;
+    border-radius:20px;
+    padding:35px;
+    margin-bottom:30px;
+    transition:.3s;
+}
+
+.card:hover{
+    border-color:#fff;
+    transform:translateY(-5px);
+    box-shadow:0 0 20px rgba(255,255,255,.08);
+}
+
+.card h2{
+    margin-bottom:15px;
+    font-weight:900;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+/* FEATURES */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+}
+
+.feature{
+    background:#101010;
+    border:1px solid #222;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    transition:.3s;
+}
+
+.feature:hover{
+    transform:translateY(-8px);
+    border-color:white;
+    box-shadow:0 0 20px rgba(255,255,255,.08);
+}
+
+.feature h3{
+    margin-bottom:10px;
+    font-weight:900;
+}
+
+/* BENEFITS / RULES CARDS */
+
+.red-cards{
+    border:2px solid #fff;
+    background:#0a0a0a;
+}
+
+.red-cards h2{
+    color:#fff;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.red-cards ul{
+    padding-left:20px;
+}
+
+.red-cards li{
+    margin:12px 0;
+}
+
+/* STAFF */
+
+.staff{
+    border:2px solid #444;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#fff;
+    border-top:1px solid #222;
+}
+</style>
 </body>
 </html>
